@@ -21,8 +21,10 @@ const Home = () => {
           ))}
         </div>
         <div className="grid md:grid-cols-3 gap-4">
-          {bottomRowHotels.map((hotel) => (
-            <LatestDestinationCard hotel={hotel} />
+        {bottomRowHotels
+          .filter((hotel, index) => index < 3)
+          .map((hotel) => (
+            <LatestDestinationCard hotel={hotel} key={hotel.id} />
           ))}
         </div>
       </div>
